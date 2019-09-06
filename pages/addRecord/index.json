@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "showModal": "/component/showModal/index",
+    "uploadImages": "/component/uploadImages/index",
+    "date-picker": "/component/date-picker/date-picker"
+  }
+}

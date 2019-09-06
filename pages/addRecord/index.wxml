@@ -1,0 +1,128 @@
+<!--pages/addRecord/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<view class="addpaly add_record font_400 fadeIn" wx:if='{{loading}}'>
+
+   <view class="info_view">
+      <view class="addpaly_title"> 基本信息 </view>
+
+      <!-- <view class="row {{recordtype==0&&catInfo.length==1?'row_no_line':''}}">
+         <text class="label">记录时间</text>
+         <picker class='flexAuto' mode="date" bindchange="bindPickerChange" data-name='record_time' value="{{parmas.record_time}}" disabled='{{id}}' end="{{today}}">
+            <text class="picker" wx:if='{{parmas.record_time}}'>{{tools.dateYMD(parmas.record_time)}}</text>
+            <text class="no_picker" wx:else>选择时间</text>
+            <image wx:if='{{!id}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+         </picker>
+      </view> -->
+
+      <view class="row {{recordtype==0&&catInfo.length==1?'row_no_line':''}}" bindtap='onYMDhm'>
+        <text class="label">记录时间</text>
+        <view class="flexAuto">
+          <text class="picker" wx:if='{{parmas.record_time}}'>{{tools.dateYMDHM(parmas.record_time)}}</text>
+          <text class="no_picker" wx:else>选择时间</text>
+          <image wx:if='{{!id||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+        </view>
+         <date-picker mode="YMDhm" isShowDatePicker="{{isShowPicker}}" data="{{dateType}}" date="{{date}}" data-name='record_time' bind:datePickerCancellEvent="cancelPicker" bind:datePickerOkEvent="okEventPicker" > </date-picker>
+      </view>
+
+      <!-- 称体重 -->
+      <view class="row {{catInfo.length>1?'':'row_no_line'}}" wx:if='{{recordtype==1}}'>
+         <text class="label">猫咪体重</text>
+         <view class="ipt_weight flexAuto">
+            <input class="ipt" type="digit" value="{{parmas.detail.weight?parmas.detail.weight:''}}" data-name='weight' 
+             disabled='{{id}}' placeholder="0.0" maxlength="3" placeholder-style="placeStyle" bindinput="changeIpt">
+            </input>
+            <text class="kg">kg</text>
+         </view>
+      </view>
+
+      <!--做驱虫  -->
+
+      <block wx:if='{{recordtype==2}}'>
+         <view class="row">
+            <text class="label">驱虫类型</text>
+            <picker class='flexAuto' range="{{tools.mapping.dewormMaps}}" value="{{parmas.detail.type}}" disabled='{{id&&!edit}}' data-name='type' bindchange="bindPickerChange">
+               <text class="picker" wx:if='{{parmas.detail.type>=0}}'>{{tools.mapping.dewormMaps[parmas.detail.type]}}</text>
+               <text class="no_picker" wx:else>选择类型</text>
+               <image wx:if='{{!id||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+            </picker>
+         </view>
+
+         <view class="row {{catInfo.length>1?'':'row_no_line'}}">
+            <text class="label">驱虫药</text>
+            <picker class='flexAuto' disabled='{{id&&!edit}}' range="{{tools.mapping.dewormMedMaps}}" value="{{parmas.detail.insecticide_type}}" data-name='insecticide_type' bindchange="bindPickerChange">
+               <text class="picker" wx:if='{{parmas.detail.insecticide_type>=0}}'>{{tools.mapping.dewormMedMaps[parmas.detail.insecticide_type]}}</text>
+               <text class="no_picker" wx:else>选择驱虫药</text>
+               <image wx:if='{{!id||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+            </picker>
+         </view>
+
+      </block>
+
+      <!-- 打疫苗 -->
+      <view class="row {{catInfo.length>1?'':'row_no_line'}}" wx:if='{{recordtype==3}}'>
+         <text class="label">疫苗种类</text>
+         <picker class='flexAuto' range="{{tools.mapping.rabiesMaps}}" value="{{interval}}" disabled='{{id&&!edit}}' data-name='type' bindchange="bindPickerChange">
+            <text class="picker" wx:if='{{parmas.detail.type>=0}}'>{{tools.mapping.rabiesMaps[parmas.detail.type]}} </text>
+            <text class="no_picker" wx:else>选择种类</text>
+            <image wx:if='{{!id||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+         </picker>
+      </view>
+
+
+      <!-- 对应猫咪 -->
+      <view class="row row_no_line" wx:if='{{catInfo.length>1}}'>
+         <text class="label">对应猫咪</text>
+         <picker class='flexAuto' disabled='{{id&&!edit}}' range="{{catInfo}}" range-key='{{"nickname"}}' 
+         value="{{catIndex}}"
+         data-name='nickname' bindchange="bindPickerChange">
+            <text class="picker" wx:if='{{parmas.nickname}}'>{{parmas.nickname}} </text>
+            <text class="no_picker" wx:else>选择对应猫咪</text>
+            <image wx:if='{{!id||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+         </picker>
+      </view>
+
+   </view>
+   <view class="greyView"> </view>
+
+   <!-- 描述 -->
+   <view class="row_des">
+      <view class="addpaly_title">
+         描述 <text class="des_pro" wx:if='{{recordtype!=0}}'>(选填)</text>
+      </view>
+      <textarea hidden='{{isShowPicker}}' class="des_textarea fadeIn" style="padding-top: 4rpx;"
+         value="{{parmas.detail.desc?parmas.detail.desc:''}}"
+         placeholder="{{place}}" disabled='{{id&&!edit}}' placeholder-class="placeStyle" maxlength="200" data-name='desc'
+         bindinput="changeIpt" bindfocus="handleTxtFocus" bindblur="handleTxtBlur"> </textarea>
+      <view wx:if='{{isShowPicker&&!txt_focus}}' class="des_textarea fadeIn" style=" {{parmas.detail.desc?'color:#282828;':'color:#B6B6B6'}};">
+         {{parmas.detail.desc?parmas.detail.desc:place}}
+      </view>
+
+   </view>
+
+   <view class='row_des'>
+      <view class="addpaly_title" wx:if='{{parmas.record_photos||edit}}'>
+         图片<text class="des_pro">(选填)</text>
+      </view>
+      <uploadImages style='width:100%;' disabled='{{id&&!edit}}' bindmyevent="uploadPhotos" count='{{9}}' detailPics='{{parmas.record_photos}}' uploadUrl="{{uploadImgUrl}}"></uploadImages>
+   </view>
+
+
+   <view class="row row_btn" wx:if='{{role!=3}}'>
+      <block wx:if='{{id}}'>
+         <block wx:if='{{edit}}'>
+            <view class="deleteBtn" catchtap='cancelEdit'> 取消 </view>
+            <view class="careBtn {{verify?'':'grey'}}" style="width: 248rpx;"  catchtap='confrimHandle'> 记好啦 </view>
+         </block>
+         <block wx:else>
+            <view class="deleteBtn" catchtap='showOpenSet'> 删除 </view>
+            <view wx:if='{{recordtype!=1}}' class="careBtn" style="width: 248rpx;" catchtap='handleEdit'> 修改 </view>
+         </block>
+      </block>
+     
+      <view wx:else class="careBtn {{verify?'':'grey'}}" bindtap='confrimHandle'> 记好啦 </view>
+   </view>
+
+   <showModal openSet="{{openSet}}" content='真的要删除这条成长记录吗？' bindclose='closeOpenSet' bindconfrim='deleteRecord'></showModal>
+
+</view>

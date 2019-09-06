@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<login wx:if='{{status==0}}' class="fadeIn" style='background:#fff;' bindnextevent='goToAdd'></login>
+
+<view wx:if='{{status==1}}' class="container fadeIn" style="background:#fff;height:{{isIphoneX?'calc(100vh - 164rpx)':'calc(100vh - 98rpx)'}};">
+      <image class="illustrator_1" src="/images/illustrator_3.png" mode="aspectFill"> </image>
+      <form report-submit='true' bindsubmit='userSubmit'>
+         <button class="careBtn" form-type='submit' bindtap='showAddpaly'>
+            <image class="icon_add" src="/images/icon/ic_add.png"> </image> 添加提醒
+         </button>
+      </form>
+   </view>
+
+<block wx:if="{{loading}}">
+   <view wx:if='{{status==2}}' class="home_index_view fadeIn" style="background: {{status!=2?'#fff':'#F3F3F3'}};min-height:{{isIphoneX?'calc(100vh - 164rpx)':'calc(100vh - 98rpx)'}};padding-bottom:{{isIphoneX?'164':'98'}}rpx;">
+
+      <navigator wx:if='{{isFollow}}' class="is_follow" target="public" url="/pages/public/index" hover-class="none" open-type="navigate">
+         <view class='is_follow_left'>因小程序限制，暂时无法收到提醒</view>
+         <view class='is_follow_right'>解决方案></view>
+      </navigator>
+      
+      <view class="home_list">
+         <view class="list near_list" style="padding-top:{{isFollow?'0':'20rpx'}};">
+            <block wx:for="{{remindList}}" wx:key='{{index}}'>
+               <view class="list_item" data-scheduleid='{{item.id}}' data-projectid='{{item.project_id}}' data-catid='{{item.cat_id}}' bindtap='gotoEditPlay'>
+                  <view class="top">
+                     <view class="top_left">
+                        <view class="time"> {{tools.dateTime(item.next_event,'MD')}} </view>
+                        <view class="flexCenter">
+                           <image class="title_img" src="{{item.project_image_url}}"> </image> {{item.title}}
+                        </view>
+                     </view>
+                     <view class="top_right flexCenter">
+                        <image class='clock_img' src='/images/icon/ic_remind.png'></image>
+                        <block wx:if='{{item.day==0||item.day==1||item.day==2}}'>
+                           <text>{{tools.mapping.remindDays[item.day]}}</text>
+                        </block>
+                        <block wx:else>
+                           <text wx:if='{{item.type==1}}'>{{item.week==1?'本':'下'}}周{{tools.mapping.weeks[item.week_day]}}</text>
+                           <text wx:if='{{item.type==2}}'>{{item.remain_day}}天后</text>
+                        </block>
+                     </view>
+                  </view>
+                  <view class="buttom">
+                     <view class="flexCenter">
+                        <image class="cat_img" src="{{item.head_url}}" mode="aspectFill"> </image> {{item.nickname}}
+                     </view>
+                     <view class="placeStyle"> {{item.period}} </view>
+                  </view>
+               </view>
+            </block>
+         </view>
+
+         <form report-submit='true' bindsubmit='userSubmit'>
+            <button class='add_fixed {{isIphoneX?"add_fixed_x":""}}' form-type='submit' bindtap='showAddpaly'>
+               <image class="icon_add" src="/images/icon/ic_add.png"> </image>
+               <text>提醒</text>
+            </button>
+         </form>
+
+      </view>
+
+   </view>
+</block>
+
+<modal_types catchtouchmove="{{true}}" modalStatus='{{addpaly}}' title='选择提醒类型' projects='{{projects}}' popUpHeight='741' row='3' bindclose='hideAddpaly' bindgo='gotoaddRemind'></modal_types>
+
+<tabbar class='tabbar_box' tabbar="{{tabbar}}"></tabbar>
+

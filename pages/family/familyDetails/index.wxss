@@ -1,0 +1,38 @@
+/* pages/family/familyDetails/index.wxss */
+
+.family_details {
+  padding: 40rpx;
+  color: #343434;
+  font-size: 30rpx;
+}
+
+.family_details .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.family_details .title {
+  font-size: 40rpx;
+  color: #282828;
+  padding-bottom: 26rpx;
+}
+
+.family_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.family_des .des_row {
+  display: block;
+  color: #B6B6B6;
+  font-size: 26rpx;
+}
+
+.family_des .des_row:first-child {
+  margin-top: 110rpx;
+  margin-bottom: 50rpx;
+}

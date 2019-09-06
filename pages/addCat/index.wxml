@@ -1,0 +1,99 @@
+<!--pages/addCat/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<import src='../../we-cropper/we-cropper.wxml'></import>
+
+<login wx:if='{{!login}}' style='background:#fff;' bindnextevent='handleLogin'></login>
+
+<block wx:if='{{login}}'>
+   <view class='cropper-wrapper' wx:if="{{showStatus}}">
+      <template is="we-cropper" data="{{...cropperOpt}}" />
+      <cover-view class="cropper-buttons">
+         <cover-view class="uploadAgain" bindtap="hideShowStatus"> 取消 </cover-view>
+         <cover-view class="getCropperImage" bindtap="getCropperImage"> 确定 </cover-view>
+      </cover-view>
+   </view>
+
+   <view class="addCat_view">
+      <view class="cat_photo_view" hover-class="none" hover-stop-propagation="false">
+         <image class="cat_photo" wx:if='{{parmas.head_url}}' src="{{parmas.head_url}}" mode="aspectFill" bindtap="uploadTap"> </image>
+         <view wx:else class="cat_photo" bindtap='uploadTap'>
+            <image class='cat_img' src='/images/icon/ic_cat.png' alt='图片'></image>
+            <image class='photo_img' src='/images/icon/ic_phone.png' alt='相机'></image>
+         </view>
+      </view>
+
+      <view class='cat_name'>
+         <input class="ipt" value="{{parmas.nickname?parmas.nickname:''}}" data-name='nickname' type="text" placeholder="猫咪名字(6个字内）" placeholder-style="placeStyle" maxlength="6" bindinput="changeIpt"></input>
+      </view>
+
+      <view class='greyView'></view>
+
+      <view class="row no_border other" style='padding-top:40rpx;padding-bottom:9rpx;'>
+         <text class="label">猫咪性别</text>
+         <view class="sexMap">
+            <text wx:for='{{EditMap.sexMap}}' wx:key='index' class="edit_tab {{item.select?'active':''}}" data-status='{{item.status}}' data-name='sex' data-map='sexMap' catchtap='selectTab'>{{item.name}}</text>
+         </view>
+      </view>
+
+      <view class="row no_border">
+         <text class="label">是否绝育</text>
+         <view class="spayMap">
+            <text wx:for='{{EditMap.spayMap}}' wx:key='index' class="edit_tab {{item.select?'active':''}}" data-status='{{item.status}}' data-name='spay_status' data-map='spayMap' catchtap='selectTab'>{{item.name}}</text>
+         </view>
+      </view>
+
+      <view class="row">
+         <text class="label">猫咪体重</text>
+         <view class="ipt_weight flexAuto">
+            <input class="ipt" type="digit" value="{{parmas.weight?parmas.weight:''}}" data-name='weight' placeholder="0.0" maxlength="3" placeholder-style="placeStyle" bindinput="changeIpt">
+            </input>
+            <text class="kg">kg</text>
+         </view>
+      </view>
+
+      <view class="row">
+         <view class="label">猫咪品种</view>
+         <view bindtap='goSelectVarity' class='flexAuto'>
+            <text class="picker" wx:if='{{parmas.type}}'>{{parmas.type}}</text>
+            <text class="no_picker" wx:else>请选择</text>
+            <image class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+         </view>
+      </view>
+
+      <view class='row'>
+         <text class="label">出生日期</text>
+         <picker class='flexAuto' mode="date" end="{{today}}" bindchange="bindPickerChange" data-name='date_of_birth' value="{{parmas.date_of_birth}}">
+            <text class="picker" wx:if='{{parmas.date_of_birth}}'>{{tools.dateYMD(parmas.date_of_birth)}}</text>
+            <text class="no_picker" wx:else>请选择</text>
+            <image class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+         </picker>
+      </view>
+
+
+      <view class='row'>
+         <text class="label">到家日期</text>
+         <picker class='flexAuto' mode="date" bindchange="bindPickerChange" data-name='date_of_adopted' value="{{parmas.date_of_adopted}}" end="{{today}}">
+            <text class="picker" wx:if='{{parmas.date_of_adopted}}'>{{tools.dateYMD(parmas.date_of_adopted)}}</text>
+            <text class="no_picker" wx:else>请选择</text>
+            <image class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+         </picker>
+      </view>
+
+      <text class='row no_border tips'>*出生日期/到家日期不记得可估算一个日期\n 关注公众号「猫咪和我」，可添加多只猫咪档案</text>
+
+
+      <view class="row_btn">
+         <view class="careBtn {{verify?'':'grey'}}" style="width:  600rpx;" bindtap='comfirmHandle'> 填好啦～ </view>
+      </view>
+
+   </view>
+</block>
+
+<showModal 
+   openSet="{{openSet}}" 
+   confrimClass='greenBtn'
+   titleStyle='padding-top:70rpx;'
+   content='拥有的猫咪数量已满，无法创建猫咪。如需创建请联系客服'
+   colseStatus='{{true}}' 
+   bindconfrim='modalConfrim'> </showModal>

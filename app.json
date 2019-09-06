@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addRecord/index",
+    "pages/remindDetail/index",
+    "pages/previewRemind/index",
+    "pages/remind/index",
+    "pages/addRemind/index",
+    "pages/addCat/index",
+    "pages/variety_list/index",
+    "pages/public/index",
+    "pages/family/catList/index",
+    "pages/family/catFamily/index",
+    "pages/family/invitePage/index",
+    "pages/family/familyDetails/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "主子档案",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#B6B6B6",
+    "selectedColor": "#3CCB9B",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "记录",
+        "iconPath": "images/icon/ic_eye.png",
+        "selectedIconPath": "images/icon/ic_eye_active.png"
+      },
+      {
+        "pagePath": "pages/remind/index",
+        "text": "提醒",
+        "iconPath": "images/icon/ic_clock.png",
+        "selectedIconPath": "images/icon/ic_clock_active.png"
+      }
+    ]
+  }
+}

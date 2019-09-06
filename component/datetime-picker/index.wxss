@@ -1,0 +1,93 @@
+/* component/datetime-picker/index.wxss */
+
+/*选择时间模态框*/
+.date-module {
+  font-size: 32rpx;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4);
+}
+
+.date-module .date-module-box {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  /* height: 500rpx; */
+  animation: dataMoalAnimation 0.3s ease-out;
+}
+
+.date-module .date-module-box .date-module-btn-box {
+  width:100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.date-module .date-module-back {
+  height: 100%;
+  width: 100%;
+}
+
+/* 样式修改   */
+picker-view-column {
+  flex: none;
+}
+
+.date-item {
+  line-height: 50px;
+  width: 20%;
+}
+
+.date-item:nth-child(1) {
+  width: 23%;
+}
+
+.date-item:nth-child(2) {
+  width: 18%;
+}
+
+.date-item:nth-child(3) {
+  width: 29%;
+}
+
+.date-item:nth-child(4),
+.date-item:nth-child(5) {
+  width: 15%;
+}
+
+.date-module .date-module-box .date-module-btn-box .close {
+  color: #999;
+  width:45%;
+  text-align:left;
+}
+
+.date-module .date-module-box .date-module-btn-box .confirm {
+  color: #09bb07;
+  width:45%;
+  text-align:right;
+}
+
+.date-module .date-module-main {
+  width: 100%;
+  height: 500rpx;
+  line-height: 500rpx;
+  text-align: center;
+}
+
+@keyframes dataMoalAnimation {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 600rpx;
+  }
+}

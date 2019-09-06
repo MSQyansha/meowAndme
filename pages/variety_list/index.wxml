@@ -1,0 +1,68 @@
+<!--pages/variety-book/index.wxml-->
+<view class="log-list">
+
+   <!-- search_box -->
+   <view class="search_box">
+      <view class="search_left" style="width:{{!isSearch?'670':'570'}}rpx">
+         <image class='search_icon' src='/images/icon/ic_search.png' wx:if='{{!isSearch}}'></image>
+         <input class="search_ipt" style="padding:0 {{!isSearch?'8':'24'}}rpx"
+         value="{{searchValue}}" type="text" placeholder="可以搜索猫咪品种哟～" placeholder-class="no_picker" 
+         bindinput="filterSearch" bindfocus="filterFocus"> </input>
+         <image class='search_close_icon fadeIn' wx:if='{{isSearch&&searchValue!=""}}' src='/images/icon/ic_search_close.png' bindtap='clearIpt'></image>
+      </view>
+      <view class="search_cancel" wx:if="{{isSearch}}" bindtap='cancelFilter'>取消</view>
+   </view>
+
+
+
+   <block wx:if='{{!isSearch}}'>
+      <!-- 热门品种 -->
+      <view class="hot_box fadeIn">
+         <view class="hot_box_title">热门品种</view>
+         <view class="hot_box_cat">
+            <text wx:for="{{hotData}}" wx:key='{{index}}' data-name='{{item.name}}' bindtap='changeCat' class="hot_text {{selectCat==item.name?'active':''}}"> {{item.name}} </text>
+         </view>
+      </view>
+      <view class='greyView fadeIn'></view>
+
+      <!-- scroll-view滚动内容-->
+      <scroll-view class='scroll_view' style='height: {{scrollHeight!=0?scrollHeight:"calc(100% - 500rpx -26rpx)"}};' scroll-y scroll-into-view="{{toView}}" enable-back-to-top bindscroll="scroll" scroll-with-animation scroll-top="{{scrollTop}}">
+         <view class="list-group" wx:for="{{logs}}" wx:for-item="group">
+            <view class="title" id="{{group.title}}">{{group.title}}</view>
+            <block wx:for="{{group.items}}" wx:key='{{index}}' wx:for-item="user">
+               <view class="list-group-item" data-name='{{user.name}}' bindtap='changeCat'>
+                  {{user.name}}
+               </view>
+            </block>
+         </view>
+      </scroll-view>
+      <!-- 侧边字母导航 -->
+      <view class="list-shortcut fadeIn">
+         <block wx:for="{{logs}}" wx:key='{{index}}'>
+            <text class="{{currentIndex==index?'current':''}}" data-id="{{item.title}}" bindtap='scrollToview'>
+          {{item.title}}
+        </text>
+         </block>
+      </view>
+
+   </block>
+
+   <block wx:if='{{isSearch}}'>
+
+      <block wx:if='{{searchLogs.length==0&&searchValue!=""}}'>
+         <view class="no_search fadeIn">
+            呃，么有这类猫呢～
+         </view>
+      </block>
+
+      <view wx:else class="search_content fadeIn">
+         <block wx:if='{{searchLogs.length>0}}'>
+            <view class="select_item" wx:for='{{searchLogs}}' wx:key="{{index}}" data-name='{{item.name}}' bindtap='changeCat'>
+               <rich-text nodes='{{item.str}}'></rich-text>
+            </view>
+         </block>
+      </view>
+
+   </block>
+
+</view>

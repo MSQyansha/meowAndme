@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "showModal": "/component/showModal/index",
+    "wx_switch":"/component/wx_switch/index"
+  }
+}

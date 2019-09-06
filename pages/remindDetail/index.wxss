@@ -1,0 +1,16 @@
+/* pages/remindDetail/index.wxss */
+
+.remind_detail {
+  font-size: 30rpx;
+  color: #333333;
+  margin-bottom:150rpx;
+}
+
+.data-tiem {
+  margin:0 40rpx;
+  padding: 40rpx 0;
+  border-bottom: 1rpx solid #E9E9E9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

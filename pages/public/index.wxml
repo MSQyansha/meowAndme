@@ -1,0 +1,32 @@
+<!--pages/public/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<login wx:if='{{!hasCatInfo}}' bindnextevent='getCatInfo'></login>
+
+<view wx:else class='public_view'>
+    <view class="public_title"> 关注公众号后就能收到提醒通知哦～ </view>
+    <view class="public_content">
+      <view class="pc_title"> 
+        <image class="public_icon" src="/images/icon/icon_pubilc_logo.png"> </image>
+        <view>猫咪和我</view>
+      </view>
+      <view class="pc_content">
+        <view class="pc_content_center">
+          <view class="title">{{parmas.title}}提醒</view>
+          <view class="now_time">{{parmas.now_time}}</view>
+          <view class="start_time">提醒时间：{{parmas.start_time}}</view>
+          <view class="period">重复间隔：{{tools.mapping.intervalMaps[parmas.period]}}</view>
+          <view class="no_forget"> 别忘啦～ </view>
+        </view>
+      </view>
+      <view class="pc_btn">
+        <button class="careBtn" open-type="contact" show-message-card='true' send-message-title='小助手'
+          send-message-img='/images/bg/mini_program_cover.png'>
+          点击关注 回复“1”
+        </button>
+        <view > 进入下一个页面，回复1或发送小程序即可关注 </view>
+      </view>
+     
+    </view>
+
+</view>

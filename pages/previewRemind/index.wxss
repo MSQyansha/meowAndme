@@ -1,0 +1,53 @@
+/* pages/addRemind/index.wxss */
+
+.addpaly {
+  margin: 0 40rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+.addpaly .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23rpx 0;
+  color: #282828;
+  font-size: 30rpx;
+
+}
+
+.addpaly .row_line {
+  border-bottom: 1rpx solid #E9E9E9;
+}
+
+.addpaly_title {
+  font-size: 40rpx;
+  color: #282828;
+  padding-top: 40rpx;
+  padding-bottom: 27rpx;
+}
+
+.addpaly .row.row_tips {
+  padding-top: 57rpx;
+  font-size: 28rpx;
+  color: #B6B6B6;
+}
+
+.ipt_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ipt_box .ipt {
+  width: 170rpx;
+  padding-right: 20rpx;
+}
+
+.gohomeBtn {
+  width: 248rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 49rpx;
+  margin-right: 94rpx;
+}

@@ -1,0 +1,65 @@
+
+.photo_card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.photo_img {
+  position: relative;
+  /* flex-grow: 1;子元素按1/n的比例进行拉伸 */
+  box-sizing: border-box;
+  width: calc(100%/3 - 8rpx);
+  /* calc里面的运算符两边要空格 */
+  /* height: calc(100% / 3 - 10rpx); */
+  height: 218rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+}
+
+.photo_img:nth-of-type(3n) {
+  /* 选择个数是3的倍数的元素 */
+  margin-right: 0;
+}
+
+.photo_img:nth-of-type(n+7) {
+  /* 选择倒数的三个元素，n可以取0 */
+  margin-bottom: 0;
+}
+
+.photo_img .img {
+  width: 218rpx;
+  height: 218rpx;
+}
+
+.photo_img .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.upload_img {
+  border: 1px dashed #d1d1d1;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload_cat_img {
+  width: 48rpx;
+  height: 46rpx;
+
+}
+
+.upload_cat_txt {
+  font-size: 24rpx;
+  color: #979797;
+  margin-top: 20rpx;
+}
+

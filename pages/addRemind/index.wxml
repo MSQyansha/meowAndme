@@ -1,0 +1,74 @@
+<!--pages/addRemind/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<view class="addpaly" wx:if='{{loading}}'>
+    <view class="addpaly_title">
+      基本信息
+    </view>
+
+  <view class="row row_line" wx:if='{{isCustomize}}'>
+    <text class="label">提醒名称：</text>
+    <view class="ipt_box flexAuto">
+      <input class="ipt"  maxlength="6" disabled='{{scheduleId&&!edit}}' value="{{parmas.title?parmas.title:''}}" data-name='title' type="text" placeholder="计划名称" placeholder-class="placeStyle" bindinput="changeIpt" > </input>
+      <view class="title_length placeStyle" selectable="false" space="false" decode="false">
+        {{parmas.title.length}}/6
+      </view>
+    </view>
+  </view>
+
+  <view class="row row_line" bindtap='showDateModule'>
+    <text class="label">提醒时间</text>
+    <view class="flexAuto">
+      <text class="picker" wx:if='{{parmas.start_time}}'>{{tools.dateYMDHM(parmas.start_time)}}</text>
+      <text class="no_picker" wx:else>选择提醒时间</text>
+      <image wx:if='{{!scheduleId||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+      <datetime-picker wx:if='{{!scheduleId||edit}}' dataStatus='{{dataStatus}}'  dateValue="{{parmas.start_time}}" bindclose='closeDateModule'>
+      </datetime-picker>
+    </view>
+  </view>
+
+  <view class="row row_line">
+    <text class="label">重复间隔</text>
+    <picker class='flexAuto' disabled='{{scheduleId&&!edit}}' range="{{tools.mapping.intervalMaps}}" value="{{interval}}" 
+      data-name='period' bindchange="bindPickerChange">
+      <text class="picker" wx:if='{{interval>=0}}'>{{tools.mapping.intervalMaps[interval]}} </text>
+      <text class="no_picker" wx:else>选择提醒周期</text>
+      <image wx:if='{{!scheduleId||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+    </picker>
+
+  </view>
+
+   <view class="row row_line" wx:if='{{catInfo.length>1}}'>
+    <text class="label">对应猫咪</text>
+    <picker class='flexAuto' disabled='{{scheduleId&&!edit}}' range="{{catInfo}}" range-key='{{"nickname"}}' 
+     data-name='nickname' bindchange="bindPickerChange">
+      <text class="picker" wx:if='{{parmas.nickname}}'>{{parmas.nickname}} </text>
+      <text class="no_picker" wx:else>选择对应猫咪</text>
+      <image wx:if='{{!scheduleId||edit}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+    </picker>
+
+  </view>
+
+  <text wx:if='{{initData.tips}}' class="row row_tips">
+    温馨提示：\n{{initData.tips}}
+  </text>
+
+  <view class="row fixed">
+    <block wx:if='{{scheduleId}}' >
+      <block wx:if='{{edit}}'>
+            <view class="deleteBtn" catchtap='cancelEdit'> 取消 </view>
+            <view class="careBtn {{verify?'':'grey'}}" style="width: 248rpx;margin-left: 60rpx;"  catchtap='confrimHandle'> 保存 </view>
+      </block>
+      <block wx:else>
+        <view class='deleteBtn' catchtap='showOpenSet'> 删除 </view>
+        <view class="careBtn" style="width: 248rpx;margin-left: 60rpx;" catchtap='handleEdit'> 修改 </view>
+      </block>
+    </block>
+    
+     <view  wx:else class="careBtn {{verify?'':'grey'}}" bindtap='confrimHandle'>保存</view>
+  </view>
+</view>
+
+<showModal openSet="{{openSet}}" content='真的要删除全部提醒的任务吗？' bindclose='closeOpenSet' bindconfrim='deletePlay'></showModal>
+
+<showModal openSet="{{isFollow}}" content='因小程序限制，需先关注「猫咪和我」公众号才能接收提醒哦～' confrimText='去关注' confrimClass='greenBtn' titleStyle='padding-top:74rpx;' bindclose='closeFollow' bindconfrim='showFollow'> </showModal>

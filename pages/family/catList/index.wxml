@@ -1,0 +1,52 @@
+<!--pages/family/catList/index.wxml-->
+<view class="cat_list font_400 fadeIn" wx:if='{{loading}}'
+   style="{{dataList.length==0?'background:#fff':''}}">
+
+   <block wx:if='{{dataList.length>0}}'>
+      <view class="cat_item " wx:for='{{dataList}}' wx:key='{{index}}' data-id="{{item.cat_id}}"
+         data-nickname="{{item.nickname}}" bindtap="goCatFamily">
+      
+         <view class="cat_info">
+            <view class="left">
+               <image class="avatar" src="{{item.head_url}}" mode="aspectFill"> </image>
+               <view class="nickname">{{item.nickname}}</view>
+               <image class='sexImg' src='{{item.sex==1?"/images/icon/boy.png":"/images/icon/gril.png"}}'></image>
+            </view>
+            <view class="right"> {{item.type}} </view>
+         </view>
+      
+         <view class="family_info">
+            <view class="bottom_left">
+               <view class="deleteBtn" wx:if='{{item.role==1}}' data-id='{{item.cat_id}}' data-nickname="{{item.nickname}}" catchtap='deleteCat'>删除
+               </view>
+               <view class="airCareBtn" wx:if='{{item.role==1||item.role==2}}' data-id='{{item.cat_id}}' data-index="{{index}}" catchtap='goToEdit'>编辑</view>
+            </view>
+
+
+            <view class="bottom_right" data-id="{{item.cat_id}}" data-nickname="{{item.nickname}}" catchtap="goCatFamily">
+               <image class="ic_love" src="/images/icon/ic_love.jpg"> </image>
+               <view class="" selectable="false" space="false" decode="false"> 家庭 </view>
+               <image class="ic_arrow" src="/images/icon/ic_arrow.png"></image>
+            </view>
+         </view>
+      </view>
+   </block>
+ 
+   <block wx:else>
+      <view class="no_cat_view">
+         <image class="illustrator_1" src="/images/illustrator_1.png" mode="aspectFill"> </image>
+      </view>
+   </block>
+
+
+   <navigator wx:if='{{dataList.length<6}}' 
+      class="careBtn {{dataList.length<=2?'fixed':'no_fixed'}}"  
+      style="{{dataList.length==0?'bottom: 260rpx;':''}}"
+      target="addCat" url="{{dataList.length==0?'/pages/addCat/index?first=true':'/pages/addCat/index'}}"
+       hover-class="none" open-type="navigate">
+      添加猫咪
+   </navigator>
+</view>
+
+<!-- 删除提示 -->
+<showModal openSet="{{deletePrompt}}" content='{{deleteContent}}' bindclose='hideDeleteModal' bindconfrim='deleteConfrim' boxStyle='{{deletePage==1?"height:360rpx;text-align: left;":""}}' titleStyle='{{deletePage==1?"text-align:left;":""}}' > </showModal>

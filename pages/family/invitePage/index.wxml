@@ -1,0 +1,21 @@
+<!--pages/family/invitePage/index.wxml-->
+<view class='share_view'>
+
+  <view wx:if='{{inviteData}}' class="share_content fadeIn">
+    <image class="cat_logo" src="{{inviteData.head_url}}" mode="aspectFill"> </image>
+    <view class="cat_info">
+      <text class="greenColor">{{inviteData.user_name}}</text> 邀请你成为「{{inviteData.cat_name}}」的亲人，共同守候「{{inviteData.cat_name}}」的健康成长
+    </view>
+    <getuserinfo login='{{false}}' class="careBtn" bindnextevent='nextHandle'>
+      接受邀请
+    </getuserinfo>
+  </view>
+
+   <view wx:if="{{errcode==1009}}" class="no_cat fadeIn">
+    这只猫咪不见啦!
+  </view>
+
+</view>
+
+
+<showModal openSet="{{openSet}}" content='{{modalContent}}' boxStyle='{{type==0?"height:416rpx;":""}}' titleStyle='text-align: left;' confrimClass='greenBtn' bindclose='closeOpenSet' bindconfrim='handleConfrim' ></showModal>

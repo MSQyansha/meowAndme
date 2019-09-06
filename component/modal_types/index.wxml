@@ -1,0 +1,15 @@
+<!--component/modal_types/index.wxml-->
+
+<!--屏幕背景变暗的背景  -->
+<view class="modalWrapper" catchtap='_hideModal' hidden="{{!modalStatus}}"></view>
+<!--弹出框  -->
+<view class="paly_view" style="height:{{popUpHeight}}rpx" animation="{{animationData}}" hidden="{{!modalStatus}}">
+   <view class="paly_title">{{title?title:'选择类型'}}</view>
+   <view class="paly_content grid" style="grid-template-rows: repeat({{row}}, 166rpx);">
+      <view class="item" wx:for="{{ projects }}" wx:key="id" data-id='{{item.id}}' catchtap='_goto'>
+         <image src="{{item.image_url}}" mode="aspectFill" />
+         <text>{{item.title}}</text>
+      </view>
+   </view>
+   <view class="paly_cancel" catchtap='_hideModal'> 取消 </view>
+</view>

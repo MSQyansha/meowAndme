@@ -1,0 +1,121 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": false,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.1",
+	"appid": "wx6a0b0c9e797711e7",
+	"projectname": "meowAndme",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": 0,
+					"name": "addCat",
+					"pathName": "pages/addCat/index",
+					"query": "type=1",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "addRemind",
+					"pathName": "pages/addRemind/index",
+					"query": "catId=fab8d299-b3d2-4513-960d-d8e9277248ae&id=3&title=上药&schedulesId=9",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "addRecord",
+					"pathName": "pages/addRecord/index",
+					"query": "catId=68496a82-dbcc-47ca-9289-a7fd71759cfb&recordtype=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "remind",
+					"pathName": "pages/remind/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "previewRemind",
+					"pathName": "pages/previewRemind/index",
+					"query": "catId=3486996a-2b92-4d0e-8c86-c401b3abe4f3&scheduleId=edb3dc52-1763-4b5e-a4aa-cb1b3927c165",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "catList",
+					"pathName": "pages/family/catList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "catFamily",
+					"pathName": "pages/family/catFamily/index",
+					"query": "catId=dbc5177f-61e3-4505-9a35-48df7a624b47&nickname=妹妹",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "invitePage",
+					"pathName": "pages/family/invitePage/index",
+					"query": "catId=99f7e1fc-d178-4a20-9899-27eb338e9800&sharingUserId=oVzypxHDie1PwE1zlZV9qxDh2maA",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "variety_list",
+					"pathName": "pages/variety_list/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

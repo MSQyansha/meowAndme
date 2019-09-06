@@ -1,0 +1,32 @@
+<!--component/datetime-picker/index.wxml-->
+<view class="date-module" wx:if="{{dataStatus}}" >
+  <view class="date-module-back" catchtap="_cancelDateModule"></view>
+  <view class="date-module-box">
+    <view class="date-module-btn-box">
+      <view catchtap="_cancelDateModule" class="close">取消</view>
+      <view catchtap="_confirmDateModule" class="confirm">确定</view>
+    </view>
+    <picker-view class="date-module-main" indicator-style="height: {{height}}px;" value='{{dateTime}}' bindchange="_bindChange">
+      <picker-view-column class="date-item">
+        <view wx:for="{{dateTimeArray[0]}}" wx:key="index">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column class="date-item">
+        <view wx:for="{{dateTimeArray[1]}}" wx:key="index">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column class="date-item">
+        <block wx:if='{{isWeek}}'>
+          <view wx:for="{{dateTimeArray[2]}}" wx:key="index"> {{item}} </view>
+        </block>
+        <block wx:else>
+          <view wx:for="{{dateTimeArray[2]}}" wx:key="index"> {{item}}日 </view>
+        </block>
+      </picker-view-column>
+      <picker-view-column class="date-item">
+        <view wx:for="{{dateTimeArray[3]}}" wx:key="index">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column class="date-item">
+        <view wx:for="{{dateTimeArray[4]}}" wx:key="index">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

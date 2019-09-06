@@ -1,0 +1,13 @@
+<!--component/showModal/index.wxml-->
+<cover-view wx:if='{{openSet}}' class='modalWrapper'>
+  <cover-view class="new-promptBox" style="{{boxStyle}}">
+    <!-- <cover-image class="close_icon" src="./ic_close_modal.png" catchtap='_cancleSet'> </cover-image> -->
+    <cover-view class='title' style="{{titleStyle}}"> {{content?content:'这是提示内容'}} </cover-view>
+    <cover-view class='promptBtnBox'>
+      <cover-view hidden="{{colseStatus?colseStatus:false}}" class='cancelBtn' catchtap='_cancleSet'>取消</cover-view>
+      <cover-view class="confrimBtn {{confrimClass}}"  catchtap='_confrimSet'>{{confrimText?confrimText:'确定'}}</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+
+

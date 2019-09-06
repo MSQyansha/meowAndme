@@ -1,0 +1,256 @@
+/* pages/my/index.wxss */
+
+.index_view {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cat_view {
+  background: #f3f3f3;
+  padding-bottom: 60rpx;
+  height: auto;
+}
+
+.lineHeight {
+  line-height: 50rpx;
+}
+
+.cat_info_box {
+  position: relative;
+  height: 412rpx;
+}
+
+.cat_type {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 33px;
+}
+
+.cat_type_img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 33px;
+  z-index: 9;
+}
+
+.cat_type_archive {
+  position: absolute;
+  left: 22px;
+  top: 4px;
+  font-size: 10px;
+  color: #fff;
+  transform: rotate(31deg);
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+}
+
+/* .cat_type {
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  width: 128rpx;
+  height: 77rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat_type_img {
+  width: 128rpx;
+  height: 77rpx;
+}
+
+.cat_type_archive {
+  font-size: 20rpx;
+  color: #fff;
+  transform: rotate(33deg);
+  position: absolute;
+  margin-left: 20rpx;
+  top: 18rpx;
+  z-index: 100;
+} */
+
+.cat_info_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 360rpx;
+}
+
+.cat_info {
+  position: absolute;
+  left: 50%;
+  top: 40rpx;
+  transform: translateX(-50%);
+  width: 702rpx;
+  height: 348rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+
+.cat_content {
+  display: flex;
+  justify-content: space-between;
+  color: #343434;
+  font-size: 28rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.nickname {
+  font-size: 46rpx;
+  margin-right: 10rpx;
+}
+
+.cat_info .left .type {
+  font-size: 24rpx;
+  color: #3ccb9b;
+  padding: 3rpx 8rpx;
+  background: rgba(60, 203, 155, 0.3);
+  border-radius: 0px 16rpx 16rpx 16rpx;
+}
+
+.nick_type {
+  margin-bottom: 36rpx;
+}
+
+.cat_info .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+
+.cat_info .sexImg {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+
+.cat_img {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 50%;
+}
+
+.cat_num {
+  font-size: 24rpx;
+  color: #b6b6b6;
+}
+
+.cat_record {
+  position: relative;
+  left: 50%;
+  /* top: 412rpx; */
+  transform: translateX(-50%);
+  width: 702rpx;
+  min-height: 758rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 50rpx 0 50rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.redcord_title {
+  font-size: 30rpx;
+  color: #b6b6b6;
+}
+
+.no_redcord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 119rpx;
+}
+
+.has_redcord {
+  margin-top: 34rpx;
+}
+
+.timeline-item {
+  padding-left: 29rpx;
+  position: relative;
+  color: #343434;
+  border-left: 1px dashed #3ccb9b;
+}
+
+.timeline-item::after {
+  width: 12rpx;
+  height: 12rpx;
+  display: block;
+  top: 0;
+  margin-top: 12rpx;
+  position: absolute;
+  left: -7rpx;
+  border-radius: 50%;
+  content: '';
+  background: #3ccb9b;
+}
+
+.p {
+  width: 12rpx;
+  height: 12rpx;
+  display: block;
+  border-radius: 50%;
+  content: '';
+  background: #3ccb9b;
+  margin-right: 28rpx;
+}
+
+.timeline-item .year {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+}
+
+.time_des {
+  margin-top: 24rpx;
+  padding-bottom: 24rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.time_des .time {
+  flex: none;
+  width: 140rpx;
+  padding-top: 3rpx;
+}
+
+.time_des .des {
+  flex: none;
+  max-width: 470rpx;
+  padding: 4rpx 20rpx;
+  box-sizing: border-box;
+  background: #f3f3f3;
+  border-radius: 21rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.cat_photo {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+  margin-top: 15rpx;
+}
+
+.guide {
+  width: 702rpx;
+  height: 624rpx;
+  margin-left: 24rpx;
+  margin-top: 40rpx;
+}

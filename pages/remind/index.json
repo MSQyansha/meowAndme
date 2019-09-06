@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar": "../../component/tabbarComponent/tabbar",
+    "getuserinfo":"/component/getuserinfo/index",
+    "modal_types":"/component/modal_types/index",
+    "login": "/component/login/index"
+  }
+}

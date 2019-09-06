@@ -1,0 +1,78 @@
+/* pages/addRecord/index.wxss */
+
+
+.addpaly {
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+.info_view {
+  padding: 0 40rpx 17rpx 40rpx;
+}
+
+.addpaly .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23rpx 0;
+  color: #282828;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #E9E9E9;
+
+}
+
+.addpaly .row_no_line {
+  border-bottom: none;
+}
+
+.addpaly_title {
+  padding-top: 40rpx;
+  padding-bottom: 38rpx;
+  font-size: 40rpx;
+  color: #282828;
+}
+
+.ipt_weight {
+  display: flex;
+  justify-items: center;
+  justify-content: flex-end;
+
+}
+
+.ipt_weight .ipt {
+  height: 42rpx;
+  line-height: 62rpx;
+  padding-right: 10rpx;
+}
+
+.row_des {
+  padding: 0 40rpx;
+}
+
+.des_pro {
+  color: #B8B8B8;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+
+.des_textarea {
+  width: 100%;
+  height: 200rpx;
+  color: #282828;
+  font-size: 30rpx;
+  overflow: auto;
+  word-break: break-all;
+  box-sizing: border-box;
+
+}
+
+.row.row_btn {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  border-bottom: none;
+
+}
+
+.row_btn>view {
+  margin: 0 auto;
+}

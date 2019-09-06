@@ -1,0 +1,33 @@
+<!--pages/family/familyDetails/index.wxml-->
+<view class='family_details font_400'>
+  <view class="title"> 基本信息 </view>
+  <view class="row">
+    <text>微信昵称</text>
+    <view>{{family_info.nickname}}</view>
+  </view>
+  <view class="row">
+    <text>家庭身份</text>
+    <view>{{family_info.role==2?'家人':'亲人'}}</view>
+  </view>
+
+  <view class="family_des">
+    <text class="des_row"> 家人身份说明：\n 家人权限与主人一致。可以编辑猫咪资料、添加猫咪记录、创建/接收提醒，可将一起养猫的人设为家人。 </text>
+    <text class="des_row"> 亲人身份说明：\n 亲人只可查看猫咪信息，不可添加和编辑猫咪资料、记录提醒等。可邀请喜欢猫咪的朋友成为猫咪的亲人。 </text>
+  </view>
+  <view class="family_bottom fixed">
+    <view class="deleteBtn" style="width:248rpx;" bindtap='showDeleteModal'> 
+        移出家庭 
+    </view>
+     <view class="careBtn" style="margin-left: 94rpx;width:248rpx;"  bindtap='setFamilyRole'> 
+        设为{{family_info.role==2?'亲人':'家人'}} 
+    </view>
+  </view>
+
+  <view>
+  
+  </view>
+
+</view>
+
+<!-- 删除提示 -->
+<showModal openSet="{{deletePrompt}}" content='{{deleteContent}}' bindclose='hideDeleteModal' bindconfrim='deleteConfrim'> </showModal>

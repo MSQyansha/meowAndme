@@ -1,0 +1,28 @@
+<!--pages/remindDetail/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+
+<view class="remind_detail font_400">
+  <view class="data-tiem">
+    <view> {{tools.dateTime(firstList.record_time,'YMD')}} </view>
+  </view>
+  <block wx:for="{{dataList}}" wx:key='{{index}}'>
+    <view class="data-tiem placeStyle">
+      <view> {{tools.dateTime(item.record_time,'YMD')}} </view>
+      <view class="airCareBtn" wx:if='{{index==0&&item.status==1}}' 
+        data-time='{{item.record_time}}' 
+        data-recordtype='{{item.record_type}}' 
+        data-scheduleid='{{item.schedule_id}}'
+        data-projectid='{{item.project_id}}'
+        data-eventid='{{item.id}}'
+        bindtap='goEditRecord'> 转为记录 </view>
+    </view>
+  </block>
+
+  <view class="row fixed">
+    <view class="careBtn" bindtap='showOpenSet'> 删除全部提醒 </view>
+  </view>
+
+  <showModal openSet="{{openSet}}" content='真的要删除全部提醒的任务吗？' bindclose='closeOpenSet' bindconfrim='deleteRecord'>
+  </showModal>
+</view>

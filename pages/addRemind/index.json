@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "datetime-picker": "/component/datetime-picker/index",
+    "showModal":"/component/showModal/index"
+  }
+}

@@ -1,0 +1,147 @@
+/* pages/family/catList/index.wxss */
+
+.cat_list {
+   height: 100vh;
+   background: #f3f3f3;
+   padding: 35rpx 24rpx;
+   box-sizing: border-box;
+   color: #333333;
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+}
+
+.cat_item {
+   width: 702rpx;
+   height: 317rpx;
+   border-radius: 8rpx;
+   background: #fff;
+   margin-bottom: 35rpx;
+   padding: 40rpx;
+   box-sizing: border-box;
+}
+
+.avatar {
+   width: 118rpx;
+   height: 118rpx;
+   border-radius: 50%;
+}
+
+
+
+.cat_info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-bottom: 40rpx;
+   border-bottom: 1rpx solid #E5E5E5;
+}
+
+.cat_info .left,
+.family_info .bottom_left {
+   display: flex;
+   align-items: center;
+}
+
+.cat_info .nickname {
+   font-size: 46rpx;
+   margin-left: 20rpx;
+   margin-right: 10rpx;
+}
+
+.cat_info .type {
+   font-size: 24rpx;
+   color: #3CCB9B;
+   padding: 3rpx 8rpx;
+   background: rgba(60, 203, 155, 0.3);
+   border-radius: 0px 16rpx 16rpx 16rpx;
+}
+
+.cat_info .right {
+   color: #B6B6B6;
+   font-size: 30rpx;
+}
+
+.family_info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 33rpx;
+}
+
+.family_info .bottom_right {
+   flex: auto;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.family_info .deleteBtn,
+.family_info .airCareBtn {
+   width: 118rpx;
+   height: 54rpx;
+   line-height: 54rpx;
+   font-size: 30rpx;
+   font-family: PingFangSC;
+   font-weight: 400;
+
+}
+
+.family_info .deleteBtn {
+   margin-right: 40rpx;
+}
+
+.family_avatar {
+   margin-right: 17rpx;
+}
+
+.family_avatar:last-child {
+   margin-right: 0;
+}
+
+.add_family {
+   background: #E5E5E5;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.add_family_img {
+   width: 42rpx;
+   height: 42rpx;
+}
+
+.cat_list .fixed {
+   bottom: 60rpx
+}
+
+.cat_list .no_fixed {
+   margin: 60rpx auto;
+}
+
+.sexImg {
+   width: 26rpx;
+   height: 26rpx;
+   vertical-align: middle;
+   margin-left: 10rpx;
+}
+
+.ic_arrow {
+   width: 36rpx;
+   height: 36rpx;
+   margin-left: 4rpx;
+
+}
+
+.ic_love {
+   width: 35rpx;
+   height: 35rpx;
+   margin-right: 11rpx;
+}
+
+.no_cat_view {
+   text-align: center;
+   margin-top: 220rpx;
+
+}

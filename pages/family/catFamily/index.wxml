@@ -1,0 +1,89 @@
+<!--pages/family/catFamily/index.wxml-->
+<view class="cat_family font_400" wx:if='{{loading}}'>
+
+  <view class="cat_info_box fadeIn">
+      <image class="cat_info_bg" src="/images/bg/cat_info_bg.png" mode="aspectFill"></image>
+      <view class="cat_info" bindtap='goToEdit'>
+        <view class="cat_type">
+          <image class="cat_type_img" src='{{catInfo.role==1?"/images/icon/ic_cat_type_1.jpg":"/images/icon/ic_cat_type_0.jpg"}}'>
+          </image>
+          <view class="cat_type_archive">{{catInfo.archive_id}}</view>
+        </view>
+      
+       <view class="cat_content" hover-class="none" hover-stop-propagation="false">
+          <view class="left">
+            <view class="nick_type">
+              <text class="nickname">{{catInfo.nickname}}</text>
+              <text class="type">{{catInfo.type}}</text>
+            </view>
+            <view class="cat_age lineHeight">
+              <text>{{catInfo.age}}</text>
+              <text style='margin-left:32rpx;'>{{catInfo.date_of_birth}}</text>
+              <image class='sexImg' src='{{catInfo.sex==1?"/images/icon/boy.png":"/images/icon/gril.png"}}'></image>
+            </view>
+            <view wx:if='{{catInfo.weight}}' class="cat_weight lineHeight">体重 {{catInfo.weight}} kg</view>
+            <view wx:else class="cat_weight lineHeight">体重未记录</view>
+            <view class="cat_time lineHeight">
+              {{catInfo.nickname}}已经陪伴你
+              <text class="greenColor">{{catInfo.keep_day}}</text> 天
+            </view>
+          </view>
+          <view class="right">
+            <image class="cat_img" src="{{catInfo.head_url}}" mode="aspectFill"> </image>
+            <view class="cat_num">
+              家庭成员：{{catInfo.family_count}}
+            </view>
+          </view>
+       </view>
+      </view>
+  </view>
+ 
+
+
+  <view class="family_list fadeIn">
+    <view wx:if='{{catInfo.role==2}}' class="receive_info">
+        <view class="nickname"> {{catInfo.nickname}}的提醒通知 </view>
+        <!-- 开启提醒 不是主人&&需展示 -->
+        <wx_switch id='{{item.id}}' isOn='{{receive}}' onTintColor="#3CCB9B" bindswitch='tabSwitch'></wx_switch>
+    </view>
+    <view class="cat_family_item" wx:for='{{familyData}}' wx:key='{{index}}' data-item='{{item}}' bindtap='goToDetails'>
+      <view class="left">
+        <image class="avatar" src="{{item.head_url}}" mode="aspectFill"> </image>
+        <text> {{item.nickname}} </text>
+        <text class="role {{item.role==1?'role_active':''}}"> {{item.role==1?'主人':item.role==2?'家人':'亲人'}} </text>
+      </view>
+      <view wx:if='{{catInfo.role==1&&item.role!=1}}' class="right">
+        <image class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
+      </view>
+    </view>
+  </view>
+
+
+
+    <!-- 主人 -->
+  <block wx:if='{{catInfo.role==1}}'>
+      <form report-submit='true' bindsubmit='userSubmit'>
+          <button form-type='submit' open-type="share" class="careBtn fixed" style="bottom:60rpx;" hover-class="none"> 邀请亲人 </button>
+      </form>
+  </block>
+  <!-- 家人和亲人 -->
+  <block wx:if='{{catInfo.role==2||catInfo.role==3}}'>
+    <view class="fixed_bottom_btn fixed">
+      <view class="deleteBtn" style="width:248rpx;"  bindtap='showDeleteModal'> 
+        退出家庭 
+      </view>
+      <form report-submit='true' bindsubmit='userSubmit'>
+        <button form-type='submit' open-type="share" class="careBtn" style="width: 248rpx;" hover-class="none"> 邀请亲人 </button>
+      </form>
+    </view>
+  </block>
+
+</view>
+
+<!-- 删除提示 -->
+<showModal openSet="{{deletePrompt}}" content='{{deleteContent}}' bindclose='hideDeleteModal' bindconfrim='deleteConfrim'> </showModal>
+<!-- 开启提醒提示 -->
+<showModal openSet="{{remindPrompt}}" boxStyle='{{receive?"height:380rpx;":""}}'  confrimClass='greenBtn' titleStyle='text-align:left;padding-top: 74rpx;' 
+content='{{remindContent}}' colseStatus='{{true}}' bindconfrim='closeRemindModal'> </showModal>
+
+ 

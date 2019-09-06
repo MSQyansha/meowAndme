@@ -1,0 +1,104 @@
+<!--pages/my/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<login wx:if='{{!hasCatInfo}}' class='fadeIn' style='background:#fff;' bindnextevent='goToAdd'></login>
+
+<view wx:else class="index_view font_400 fadeIn" style="background:{{hasCatInfo?'#F3F3F3':'#fff'}};padding-bottom:{{isIphoneX?'164':'98'}}rpx;min-height:{{isIphoneX?'calc(100vh - 164rpx)':'calc(100vh - 98rpx)'}};">
+
+   <block wx:if='{{loading}}'>
+
+      <view class="cat_view">
+         <view class="cat_info_box">
+            <image class="cat_info_bg" src="/images/bg/cat_info_bg.png" mode="aspectFill"></image>
+
+            <swiper style='height:94%;' indicator-dots='{{catInfo.length>1}}' indicator-color='rgba(229, 229, 229, 1)' indicator-active-color='#3CCB9B' bindchange='swriperChange' current='{{current}}'>
+               <swiper-item wx:for="{{catInfo}}" wx:key='{{index}}'>
+                  <view class="cat_info" bindtap='goToEdit'>
+                    <view class="cat_type" >
+                      <image class="cat_type_img" src='{{item.role==1?"/images/icon/ic_cat_type_1.jpg":"/images/icon/ic_cat_type_0.jpg"}}'></image>
+                      <view class="cat_type_archive">{{item.archive_id}}</view>
+                    </view>
+                    <view class="cat_content">
+                       <view class="left">
+                        <view class="nick_type">
+                           <text class="nickname">{{item.nickname}}</text>
+                           <text class="type">{{item.type}}</text>
+                        </view>
+                        <view class="cat_age lineHeight">
+                           <text>{{item.age}}</text>
+                           <text style='margin-left:32rpx;'>{{item.date_of_birth}}</text>
+                           <image class='sexImg' src='{{item.sex==1?"/images/icon/boy.png":"/images/icon/gril.png"}}'></image>
+                        </view>
+                        <view wx:if='{{item.weight}}' class="cat_weight lineHeight">体重 {{item.weight}} kg</view>
+                        <view wx:else class="cat_weight lineHeight">体重未记录</view>
+                        <view class="cat_time lineHeight">
+                           {{item.nickname}}已经陪伴你
+                           <text class="greenColor">{{item.keep_day}}</text> 天
+                        </view>
+                     </view>
+                     <view class="right">
+                        <image class="cat_img" src="{{item.head_url}}" mode="aspectFill"> </image>
+                        <view class="cat_num">
+                           家庭成员：{{item.family_count}}
+                        </view>
+                     </view>
+
+                    </view>
+                  </view>
+
+               </swiper-item>
+            </swiper>
+         </view>
+
+         <view class="cat_record">
+            <view class="redcord_title">{{catInfo[current].nickname}}的成长记录：</view>
+
+            <block wx:if='{{redcordList[current].length>0}}'>
+               <view class="has_redcord">
+                  <view class="timeline-item" wx:for="{{redcordList[current]}}" wx:key='{{index}}'>
+                     <view class="year">{{item.year}}年</view>
+                     <view class="time_des font_400" wx:for='{{item.content}}' wx:key='{{index}}' wx:for-item="items">
+                        <text class="time placeStyle">{{item.content[index-1].record_time != items.record_time?tools.dateMD(items.record_time):''}}</text>
+                        <view class='content'>
+                           <text class="des" data-id='{{items.id}}' data-recordtype="{{items.record_type}}" bindtap='gotoEditRecord'>{{items.content}}</text>
+                           <block wx:for='{{items.record_photos}}' wx:key='{{index}}' wx:for-item='itemss'>
+                              <image class='cat_photo' mode='aspectFill' src="{{itemss}}" data-urls='{{items.record_photos}}' data-current='{{itemss}}' bindtap='previewCatImg'></image>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </view>
+
+            </block>
+
+             <block wx:else>
+               <view class="no_redcord">
+                  <image class="illustrator_2" src="/images/illustrator_2.png" mode="aspectFill"> </image>
+                  <view wx:if='{{is_show_button}}' class="careBtn" bindtap='showAddRecord'>
+                     <image class="icon_add" src="/images/icon/ic_add.png"> </image> 添加记录
+                  </view>
+               </view>
+            </block>
+
+         </view>
+
+      </view>
+
+
+      <view wx:if="{{is_show_button&&redcordList[current].length>0}}" class='add_fixed {{isIphoneX?"add_fixed_x":""}}' bindtap='showAddRecord'>
+         <image class="icon_add" src="/images/icon/ic_add.png"> </image>
+         <text>记录</text>
+      </view>
+
+   </block>
+
+   
+</view>
+<modal_types catchtouchmove="{{true}}" modalStatus='{{addRecord}}' title='选择添加类型' projects='{{projects}}' popUpHeight='412' row='1' bindclose='hideAddRecord' bindgo='gotoAddRecord'></modal_types>
+
+
+<tabbar style='width:100%;height:98rpx;' tabbar="{{tabbar}}"></tabbar>
+
+<view catchtouchmove="{{true}}" wx:if='{{first}}' class="modalWrapper fadeIn" style="z-index: 1990;" catchtap='hideGuide'>
+  <image class="guide" src="/images/bg/guide.png"></image>
+</view>

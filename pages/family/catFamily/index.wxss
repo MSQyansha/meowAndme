@@ -1,0 +1,218 @@
+/* pages/family/catFamily/index.wxss */
+.cat_family {
+  height: 100vh;
+  padding-bottom: 200rpx;
+  color: #333333;
+  background: #f3f3f3;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+
+
+}
+
+.fixed_bottom_btn {
+  bottom: 60rpx;
+  display: flex;
+  align-items: center;
+}
+
+.fixed_bottom_btn .careBtn {
+  margin-left: 94rpx;
+}
+
+.cat_family_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 39rpx 0;
+  border-bottom: 1rpx solid #E9E9E9;
+}
+
+.cat_family_item .avatar {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  vertical-align: middle;
+
+}
+
+.lineHeight {
+  line-height: 50rpx;
+}
+
+
+.cat_family_item .deleteBtn {
+  width: 108rpx;
+  height: 48rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+.family_list .nickname {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: #333333;
+}
+
+.receive_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24rpx;
+  padding-top: 40rpx;
+  border-bottom: 1rpx solid #E9E9E9;
+}
+
+.remind_switch {
+  text-align: right;
+  font-size: 26rpx;
+  color: #B6B6B6;
+}
+
+.cat_info_box {
+  position: relative;
+  height: 412rpx;
+}
+
+.cat_info_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 360rpx;
+
+}
+
+.cat_info {
+  position: absolute;
+  left: 50%;
+  top: 40rpx;
+  transform: translateX(-50%);
+  width: 702rpx;
+  height: 348rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+
+.cat_content {
+  display: flex;
+  justify-content: space-between;
+  color: #343434;
+  font-size: 28rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.nickname {
+  font-size: 46rpx;
+  margin-right: 10rpx;
+}
+
+.cat_info .left .type {
+  font-size: 24rpx;
+  color: #3CCB9B;
+  padding: 3rpx 8rpx;
+  background: rgba(60, 203, 155, 0.3);
+  border-radius: 0px 16rpx 16rpx 16rpx;
+}
+
+.nick_type {
+  margin-bottom: 36rpx;
+}
+
+.cat_info .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.cat_info .sexImg {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+
+.cat_img {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 50%;
+}
+
+.cat_num {
+  font-size: 24rpx;
+  color: #B6B6B6;
+}
+.cat_type {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 33px;
+}
+
+.cat_type_img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 33px;
+  z-index: 9;
+}
+
+.cat_type_archive {
+  position: absolute;
+  left: 22px;
+  top: 4px;
+  font-size: 10px;
+  color: #fff;
+  transform: rotate(31deg);
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+}
+
+.family_list {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 702rpx;
+  min-height: 794rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.cat_family_item .left {
+  display: flex;
+  align-items: center;
+}
+
+.cat_family_item .role {
+  display: inline-block;
+  width: 68rpx;
+  height: 34rpx;
+  line-height: 32rpx;
+  border-radius: 49rpx;
+  border: 1rpx solid #B6B6B6;
+  font-size: 20rpx;
+  color: #B6B6B6;
+  text-align: center;
+  margin-left: 16rpx;
+}
+
+.cat_family_item .role.role_active {
+  border: 1rpx solid #3CCB9B;
+  color: #3CCB9B;
+
+}

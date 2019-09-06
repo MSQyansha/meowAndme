@@ -1,0 +1,58 @@
+<!--pages/addRemind/index.wxml-->
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
+
+<view class="addpaly">
+
+    <login wx:if='{{!hasCatInfo}}' bindnextevent='getCatInfo'></login>
+
+    <block wx:else>
+      <view class="addpaly_title">
+        基本信息
+      </view>
+      
+      <view class="row row_line" wx:if='{{isCustomize}}'>
+        <text class="label">提醒名称：</text>
+        <view class="ipt_box">
+          <input class="ipt" maxlength="6" disabled value="{{parmas.title?parmas.title:''}}" data-name='title' type="text"
+            placeholder="计划名称" placeholder-class="placeStyle"> </input>
+          <view class="title_length placeStyle" selectable="false" space="false" decode="false">
+            {{parmas.title.length}}/6
+          </view>
+        </view>
+      </view>
+      
+      <view class="row row_line">
+        <text class="label">提醒时间</text>
+        <view class="">
+          <text class="picker" wx:if='{{parmas.start_time}}'>{{tools.dateTime(parmas.start_time,'YMD')}}</text>
+          <text class="no_picker" wx:else>选择提醒时间</text>
+        </view>
+      </view>
+      
+      <view class="row row_line">
+        <text class="label">重复间隔</text>
+        <picker disabled range="{{tools.mapping.intervalMaps}}" value="{{interval}}">
+          <text class="picker" wx:if='{{interval>=0}}'>{{tools.mapping.intervalMaps[interval]}} </text>
+          <text class="no_picker" wx:else>选择提醒周期</text>
+        </picker>
+      </view>
+
+      <view class="row">
+        <text class="label">对应猫咪</text>
+        <view>{{parmas.nickname}}</view>
+      </view>
+      
+      
+      <text wx:if='{{parmas.tips}}' class="row row_tips">
+        温馨提示：\n{{parmas.tips}}
+      </text>
+      
+      
+      <view class="row fixed">
+        <navigator class="airCareBtn gohomeBtn"  target="index" url="/pages/index/index" hover-class="none" open-type="switchTab">
+          回到首页
+        </navigator>
+        <view class="careBtn" style="width: 248rpx;" bindtap='goEditRecord'>转为记录</view>
+      </view>
+    </block>
+</view>

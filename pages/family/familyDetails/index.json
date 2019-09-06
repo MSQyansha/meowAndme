@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "showModal": "/component/showModal/index"
+  },
+  "navigationBarTitleText": "家庭详情"
+}

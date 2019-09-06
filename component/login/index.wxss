@@ -1,0 +1,40 @@
+/* component/login/index.wxss */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  background:#fff;
+
+}
+
+
+.careBtn {
+  width: 360rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #3CCB9B;
+  border-radius: 49rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+.illustrator_1 {
+  width: 292rpx;
+  height: 335rpx;
+  margin-bottom: 96rpx;
+}
+.des{
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color: #B6B6B6;
+  padding-left: 48rpx;
+  padding-right: 44rpx;
+  margin-top: 80rpx;
+}

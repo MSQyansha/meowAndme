@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "getuserinfo":"/component/getuserinfo/index",
+    "showModal":"/component/showModal/index"
+  }
+}

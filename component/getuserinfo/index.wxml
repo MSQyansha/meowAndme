@@ -1,0 +1,4 @@
+<!--component/getuserinfo/index.wxml-->
+<button wx:if='{{!hasUserInfo}}' class="getusetBtn" hover-class="none" open-type='getUserInfo' bindgetuserinfo='_getUserInfo'></button>
+<button wx:else class="getusetBtn" hover-class="none"  bindtap='_normalevent'></button>
+<slot></slot>

@@ -1,0 +1,130 @@
+/**index.wxss**/
+
+.home_index_view {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.not_cat_play {
+  background: #fff;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.home_list {
+  color: #333333;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  background: #F3F3F3;
+}
+
+.home_list .list {
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.list_item {
+  margin-bottom: 20rpx;
+  width: 702rpx;
+  height: 275rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.list_item .top,
+.list_item .buttom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list_item .top_left .time {
+  margin-bottom: 11rpx;
+}
+
+.title_img {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 14rpx;
+}
+
+.cat_img {
+  width: 58rpx;
+  height: 58rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+
+.clock_img {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx;
+}
+
+.list_item .top_right {
+  font-size: 40rpx;
+  color: #3CCB9B;
+}
+
+
+
+.list_item .top {
+  padding-top: 40rpx;
+  padding-bottom: 34rpx;
+}
+
+.list_item .buttom {
+  padding-top: 22rpx;
+  border-top: 1rpx solid #E5E5E5;
+}
+
+
+.is_follow {
+  width: 100%;
+  height: 88rpx;
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FDEDDE;
+  font-size: 26rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.is_follow_left {
+  color: #F9C289;
+}
+
+.is_follow_right {
+  color: #525252;
+}

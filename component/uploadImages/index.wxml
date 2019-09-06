@@ -1,0 +1,10 @@
+<view class="photo_card">
+  <view class="photo_img" wx:for="{{detailPics}}" wx:key='index' wx:if="{{detailPics.length}}" data-currenturl='{{item}}' bindtap='previewImage'>
+    <image class="img" mode='aspectFill' src="{{item}}" bindlongpress="bindlongpressimg" data-id='{{index}}'></image>
+    <image hidden='{{disabled}}' class="close" src='/images/icon/icon_close_img.png' data-id='{{index}}' catchtap='deleteUploadImg'></image>
+  </view>
+  <view hidden='{{disabled}}' class="photo_img upload_img" wx:if="{{detailPics.length<9}}" bindtap='uploadDetailImage'>
+    <image class="upload_cat_img" src="/images/icon/upload_cat_img.png"></image>
+    <!-- <text class="upload_cat_txt">更多猫咪照片</text> -->
+  </view>
+</view>

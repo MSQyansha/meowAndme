@@ -1,0 +1,48 @@
+/* pages/family/invitePage/index.wxss */
+.share_view {
+  width: 100vw;
+  height: 100vh;
+  background-color: #3CCB9B;
+  text-align: center;
+  padding: 55rpx 24rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.share_content {
+  width: 702rpx;
+  height: 1110rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+}
+
+.cat_logo {
+  width: 216rpx;
+  height: 216rpx;
+  border-radius: 50%;
+  margin-top: 100rpx;
+  margin-bottom: 32rpx;
+}
+
+.cat_info {
+  width: 508rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: #525252;
+  margin-bottom: 150rpx;
+}
+
+.cat_info,
+.careBtn{
+  display: inline-block;
+}
+
+.no_cat{
+  color: #fff;
+  font-size: 40rpx;
+  margin-top: 400rpx;
+}

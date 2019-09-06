@@ -1,0 +1,229 @@
+/**app.wxss**/
+
+page{
+  display: block;
+  min-height: 100vh;
+}
+
+.container_pb{
+  padding-bottom: 100rpx;
+}
+
+.container_pb_x{
+  padding-bottom: 169rpx;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.bgColor {
+  background: #dfefea;
+  height: 100vh;
+}
+
+button {
+  padding: 0;
+  color: none;
+  background-color: transparent;
+  line-height: normal;
+  border-radius: 0;
+}
+
+.btn-hover {
+  color: none;
+  background-color: transparent;
+}
+
+button::after {
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
+
+textarea {
+  width: 100%;
+}
+
+.greenColor {
+  color: #3CCB9B;
+}
+
+.font_400 {
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+
+.modalWrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 990;
+}
+
+.modalBox {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10rpx;
+  min-height: 612rpx;
+  text-align: center;
+}
+
+/* 绿色的点击按钮 begin */
+
+.careBtn {
+  width: 360rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #3CCB9B;
+  border-radius: 49rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+/* 绿色的点击按钮 end */
+
+/* 灰色的点击按钮 begin */
+.careBtn.grey {
+  background: #E5E5E5;
+}
+
+.airCareBtn {
+  width: 168rpx;
+  height: 64rpx;
+  line-height: 66rpx;
+  border-radius: 32rpx;
+  border: 1rpx solid #3CCB9B;
+  text-align: center;
+  color: #3CCB9B;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+.deleteBtn {
+  width: 248rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 49rpx;
+  border: 1rpx solid #FF969F;
+  text-align: center;
+  color: #FF969F;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  background: #fff;
+}
+
+.illustrator_1 {
+  width: 292rpx;
+  height: 335rpx;
+  margin-bottom: 96rpx;
+}
+
+.illustrator_2 {
+  width: 225rpx;
+  height: 225rpx;
+  margin-bottom: 96rpx;
+}
+
+.icon_add {
+  width: 28rpx;
+  height: 24rpx;
+
+}
+
+.placeStyle {
+  color: #B6B6B6;
+}
+
+.no_picker {
+  color: #B6B6B6;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 155rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.greyView {
+  width: 100%;
+  height: 20rpx;
+  background-color: #F3F3F3;
+}
+
+.icon_arrow {
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 14rpx;
+  vertical-align: middle;
+  margin-top: -3rpx;
+
+}
+
+.add_fixed {
+  position: fixed;
+  right: 40rpx;
+  bottom: 150rpx;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  background: rgba(60, 203, 155, 1);
+  box-shadow: 0px 8rpx 16rpx 0px rgba(209, 209, 209, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #fff;
+}
+
+.add_fixed_x{
+  bottom:220rpx;
+}
+.add_fixed .icon_add {
+  margin-bottom: 4rpx;
+}
+
+.flexAuto{
+  flex:auto;
+  text-align:right;
+
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+.fadeIn {
+   animation: fadeIn 0.18s ease-in;
+}
