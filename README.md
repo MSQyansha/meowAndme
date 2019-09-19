@@ -12,6 +12,7 @@
 
 - [页面介绍](#页面介绍)
 - [阿拉丁小程序统计平台SDK集成](#阿拉丁小程序统计平台SDK集成)
+- [授权](#授权)
 
 ### 页面介绍
 
@@ -110,4 +111,10 @@ var aldstat= require("./url/ald-stat.js")
 
  - [专注于小程序的代码监测](https://tj.aldwx.com/downSDK/)
  - [标准版小程序SDK接入指南](http://doc.aldwx.com/aldwx/gao-ji-gong-neng/sdkjie-ru-zhi-nan.html)
+
+### 授权
+审核怎么都不通过
+处理就是加了个弹框
+让用户同意授权之后在进行微信授权。
+
 
