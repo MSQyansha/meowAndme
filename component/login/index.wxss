@@ -11,7 +11,6 @@
 
 }
 
-
 .careBtn {
   width: 360rpx;
   height: 88rpx;
@@ -29,6 +28,7 @@
   height: 335rpx;
   margin-bottom: 96rpx;
 }
+
 .des{
   font-size:28rpx;
   font-family:PingFangSC;

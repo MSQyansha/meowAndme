@@ -23,7 +23,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.1",
+	"libVersion": "2.8.2",
 	"appid": "wx6a0b0c9e797711e7",
 	"projectname": "meowAndme",
 	"debugOptions": {

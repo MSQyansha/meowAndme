@@ -1,10 +1,7 @@
-<!--component/login/index.wxml-->
+<!-- component/login/index.wxml -->
 <view class="container not_cat_view">
-    <image class="illustrator_1" src="/images/illustrator_1.png" mode="aspectFill"> </image>
-    <getuserinfo class="careBtn" bindnextevent='nextevent'>
-      <view class="careBtn">授权并添加猫咪</view>
-    </getuserinfo>
-    <view class="des">
-    「主子档案」是一款记录猫咪基本信息、提醒照顾的服务小程序。在添加主子档案前，我们需要获取授权信息关联到你哦～
-    </view>
-  </view>
+  <image class="illustrator_1" src="/images/illustrator_1.png" mode="aspectFill"></image>
+  <getuserinfo class="careBtn" bindnextevent='nextevent'>
+  </getuserinfo>
+  <!-- <view class="des">「主子档案」是一款记录猫咪基本信息、提醒照顾的服务小程序。在添加主子档案前，我们需要获取授权信息关联到你哦～</view> -->
+</view>

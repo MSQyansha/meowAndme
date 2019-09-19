@@ -1,4 +1,16 @@
-<!--component/getuserinfo/index.wxml-->
-<button wx:if='{{!hasUserInfo}}' class="getusetBtn" hover-class="none" open-type='getUserInfo' bindgetuserinfo='_getUserInfo'></button>
-<button wx:else class="getusetBtn" hover-class="none"  bindtap='_normalevent'></button>
+<!-- component/getuserinfo/index.wxml -->
+<button wx:if='{{!hasUserInfo}}' class="getusetBtn" hover-class="none" bindtap="showAuthToast">添加猫咪</button>
+<button wx:else class="getusetBtn" hover-class="none" bindtap='_normalevent'>添加猫咪</button>
 <slot></slot>
+<view wx:if="{{isAuthToast}}" class="toast" bindtap='clearToast'>
+  <view class="toast-card">
+    <p class="toast-title">提示</p>
+    <p class="toast-desc">还未登录，请登录后进行操作～</p>
+    <view class="toast-button">
+      <button class="button_cancel" bindtap='clearToast'>取消登录</button>
+      <button class="button_confirm" open-type='getUserInfo' bindgetuserinfo='_getUserInfo'>
+        立即登录
+      </button>
+    </view>
+  </view>
+</view>
