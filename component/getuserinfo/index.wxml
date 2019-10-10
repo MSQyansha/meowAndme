@@ -7,8 +7,8 @@
     <p class="toast-title">提示</p>
     <p class="toast-desc">还未登录，请登录后进行操作～</p>
     <view class="toast-button">
-      <button class="button_cancel" bindtap='clearToast'>取消登录</button>
-      <button class="button_confirm" open-type='getUserInfo' bindgetuserinfo='_getUserInfo'>
+      <button class="button_cancel" hover-class="btn-hover" bindtap='clearToast'>取消登录</button>
+      <button class="button_confirm" hover-class="btn-hover"  open-type='getUserInfo' bindgetuserinfo='_getUserInfo' >
         立即登录
       </button>
     </view>

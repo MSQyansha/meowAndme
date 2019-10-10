@@ -1,5 +1,20 @@
 /* component/getuserinfo/index.wxss */
+button {
+  padding: 0;
+  color: none;
+  background-color: transparent;
+  line-height: normal;
+  border-radius: 0;
+}
 
+.btn-hover {
+  color: none;
+  background-color: transparent;
+}
+
+button::after {
+  border: none;
+}
 .getusetBtn{
   z-index: 999;
   width: 360rpx;
