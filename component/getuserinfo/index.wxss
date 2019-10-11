@@ -1,4 +1,5 @@
 /* component/getuserinfo/index.wxss */
+
 button {
   padding: 0;
   color: none;
@@ -15,12 +16,13 @@ button {
 button::after {
   border: none;
 }
-.getusetBtn{
+
+.getusetBtn {
   z-index: 999;
   width: 360rpx;
   height: 88rpx;
   line-height: 88rpx;
-  background: #3CCB9B;
+  background: #3ccb9b;
   border-radius: 49rpx;
   font-size: 30rpx;
   font-family: PingFangSC-Medium;
@@ -36,7 +38,7 @@ button::after {
   width: 710rpx;
   height: 600rpx;
   text-align: center;
-  background-color: #3CCB9B;
+  background-color: #3ccb9b;
 }
 
 .toast {
@@ -46,7 +48,7 @@ button::after {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .toast-card {
@@ -68,7 +70,7 @@ button::after {
   font-weight: 500;
 }
 
-.toast-desc{
+.toast-desc {
   margin-top: -40rpx;
   font-size: 32rpx;
   color: #818181;
@@ -77,18 +79,23 @@ button::after {
 .toast-button {
   display: flex;
   width: 100%;
-  padding-top: 20rpx;
+  align-items: center;
   border-top: 1px solid rgb(202, 202, 202);
+}
+
+.toast-button button {
+  flex: none;
+  width: 50%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 35rpx;
 }
 
 .button_cancel {
   color: rgb(204, 204, 204);
-  font-size: 35rpx;
-  margin-bottom: 10rpx;
 }
 
 .button_confirm {
-  color: #3CCB9B;
-  font-size: 35rpx;
-  margin-bottom: 26rpx;
+  color: #3ccb9b;
 }

@@ -1,6 +1,6 @@
 
-const vatietyMap={
-  hotVatiety:[
+const vatietyMap = {
+  hotVatiety: [
     { index: "Z", name: '中华田园猫' },
     { index: "L", name: '狸花猫' },
     { index: "J", name: '橘猫' },
@@ -9,7 +9,7 @@ const vatietyMap={
     { index: "Y", name: '英短蓝白' },
     { index: "Y", name: '英短蓝猫' },
     { index: "Y", name: '英短银渐层' },
-    { index: "Y", name: '英短金渐层' },
+    { index: "C", name: '串串' },
     { index: "B", name: '布偶猫' },
     { index: "B", name: '波斯猫' },
     { index: "J", name: '加菲猫' },
@@ -18,7 +18,7 @@ const vatietyMap={
     { index: "J", name: '金吉拉' },
     { index: "M", name: '缅因猫' },
   ],
-  allVatiety:[
+  allVatiety: [
     { index: "A", name: '阿比西尼亚猫' },
     { index: "A", name: '埃及猫' },
     { index: "A", name: '奥西猫' },
@@ -28,6 +28,7 @@ const vatietyMap={
     { index: "B", name: '波斯猫' },
     { index: "B", name: '伯曼猫' },
     { index: "B", name: '布偶猫' },
+    { index: "C", name: '串串' },
     { index: "D", name: '玳瑁猫' },
     { index: "D", name: '德文卷毛猫' },
     { index: "D", name: '东方猫' },
@@ -53,8 +54,10 @@ const vatietyMap={
     { index: "M", name: '美国卷毛猫' },
     { index: "M", name: '孟加拉豹猫' },
     { index: "M", name: '孟买猫' },
+    { index: "M", name: '米努特猫' },
     { index: "M", name: '缅甸猫' },
     { index: "M", name: '缅因猫' },
+    { index: "N", name: '拿破仑猫' },
     { index: "N", name: '奶牛猫' },
     { index: "N", name: '挪威森林猫' },
     { index: "O", name: '欧洲缅甸猫' },
