@@ -53,7 +53,7 @@ App({
               encrypted_data: encryptedData,
               iv: iv
             };
-            console.log(params, 'get_unionId==params')
+            // console.log(params, 'get_unionId==params')
             get_unionId(params).then(res => {
               "use strict";
               console.log(res,'get_unionId_res')

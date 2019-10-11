@@ -6,15 +6,7 @@
    <view class="info_view">
       <view class="addpaly_title"> 基本信息 </view>
 
-      <!-- <view class="row {{recordtype==0&&catInfo.length==1?'row_no_line':''}}">
-         <text class="label">记录时间</text>
-         <picker class='flexAuto' mode="date" bindchange="bindPickerChange" data-name='record_time' value="{{parmas.record_time}}" disabled='{{id}}' end="{{today}}">
-            <text class="picker" wx:if='{{parmas.record_time}}'>{{tools.dateYMD(parmas.record_time)}}</text>
-            <text class="no_picker" wx:else>选择时间</text>
-            <image wx:if='{{!id}}' class="icon_arrow" src="/images/icon/ic_arrow.png"></image>
-         </picker>
-      </view> -->
-
+      <!-- 选择时间 -->
       <view class="row {{recordtype==0&&catInfo.length==1?'row_no_line':''}}" bindtap='onYMDhm'>
         <text class="label">记录时间</text>
         <view class="flexAuto">
@@ -37,7 +29,6 @@
       </view>
 
       <!--做驱虫  -->
-
       <block wx:if='{{recordtype==2}}'>
          <view class="row">
             <text class="label">驱虫类型</text>
@@ -100,6 +91,7 @@
 
    </view>
 
+   <!-- 上传图片 -->
    <view class='row_des'>
       <view class="addpaly_title" wx:if='{{parmas.record_photos||edit}}'>
          图片<text class="des_pro">(选填)</text>
