@@ -117,12 +117,18 @@ var aldstat= require("./url/ald-stat.js")
 处理就是加了个弹框
 让用户同意授权之后在进行微信授权。
 
-**20191010**
+**2019.10.10**
 
 ios 9.3.5 不支持grid布局，
 修改grid布局为flex,暂且还不清楚支不支持（没有测试）
 看论坛说也不支持flex布局：https://developers.weixin.qq.com/community/develop/doc/0004c4856dc52869e02702f445bc00
 
+**2019.10.11**
+
+使用自定义tabBar是因为在点击记录和提醒时出现选择弹框，如果不自定义，只是隐藏tabbar，页面会有抖动的bug，
+官方提供了自定义tabBar，但是只适用于一排显示，不支持突出显示。
+
+- 使用[自定义tabBar](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)
 
 
 

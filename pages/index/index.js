@@ -45,12 +45,16 @@ Page({
   onLoad: function (options) {
     console.log('onLoad');
     this.handleShow('onload')
-    app.editTabbar();
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
     console.log('onHosw');
     // console.log(this.route,wx.env)
     

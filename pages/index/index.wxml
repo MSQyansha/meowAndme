@@ -96,9 +96,6 @@
 </view>
 <modal_types catchtouchmove="{{true}}" modalStatus='{{addRecord}}' title='选择添加类型' projects='{{projects}}' popUpHeight='412' row='1' bindclose='hideAddRecord' bindgo='gotoAddRecord'></modal_types>
 
-
-<tabbar style='width:100%;height:98rpx;' tabbar="{{tabbar}}"></tabbar>
-
 <view catchtouchmove="{{true}}" wx:if='{{first}}' class="modalWrapper fadeIn" style="z-index: 1990;" catchtap='hideGuide'>
   <image class="guide" src="/images/bg/guide.png"></image>
 </view>

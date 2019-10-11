@@ -66,5 +66,4 @@
 
 <modal_types catchtouchmove="{{true}}" modalStatus='{{addpaly}}' title='选择提醒类型' projects='{{projects}}' popUpHeight='741' row='3' bindclose='hideAddpaly' bindgo='gotoaddRemind'></modal_types>
 
-<tabbar class='tabbar_box' tabbar="{{tabbar}}"></tabbar>
 

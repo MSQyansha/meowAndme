@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "getuserinfo": "/component/getuserinfo/index"
-  }
-}

@@ -51,7 +51,6 @@ Page({
   onLoad: function (options) {
     this.getProjects();
     this.handleShow('onLoad')
-    app.editTabbar();
   },
  
   /**
@@ -59,6 +58,12 @@ Page({
     */
   onShow: function () {
     wx.stopPullDownRefresh()
+
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 1
+      })
+    }
 
     //已经授权的判断是否有猫咪信息
     console.log('onShow', this.data.remindStatus, wx.getStorageSync('remind_switch'))

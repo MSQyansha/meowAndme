@@ -14,27 +14,6 @@ App({
   globalData: {
     userInfo: null,
     systemInfo: null,//客户端设备信息
-    tabBar: {
-      "backgroundColor": "#ffffff",
-      "color": "#B6B6B6",
-      "selectedColor": "#3CCB9B",
-      "list": [
-        {
-          "pagePath": "/pages/index/index",
-          "iconPath": "/images/icon/ic_eye.png",
-          "selectedIconPath": "/images/icon/ic_eye_active.png",
-          "text": "记录",
-          "isTabbar": true
-        },
-        {
-          "pagePath": "/pages/remind/index",
-          "iconPath": "/images/icon/ic_clock.png",
-          "selectedIconPath": "/images/icon/ic_clock_active.png",
-          "text": "提醒",
-          "isTabbar": true
-        }
-      ]
-    }
   },
   getSystemInfo: function () {
     let t = this;
@@ -42,21 +21,6 @@ App({
       success: function (res) {
         t.globalData.systemInfo = res;
       }
-    });
-  },
-  // 自定义切换tabber
-  editTabbar: function () {
-    let tabbar = this.globalData.tabBar;
-    let currentPages = getCurrentPages();
-    let _this = currentPages[currentPages.length - 1];
-    let pagePath = _this.route;
-    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
-    for (let i in tabbar.list) {
-      tabbar.list[i].selected = false;
-      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
-    }
-    _this.setData({
-      tabbar: tabbar
     });
   },
   // 全局获取用户信息

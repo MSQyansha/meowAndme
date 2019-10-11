@@ -31,24 +31,16 @@ button::after {
   text-align: center;
 }
 
-.toast_container {
-  position: absolute;
-  top: 400rpx;
-  left: 10rpx;
-  width: 710rpx;
-  height: 600rpx;
-  text-align: center;
-  background-color: #3ccb9b;
-}
-
 .toast {
-  z-index: 999;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
 }
 
 .toast-card {
@@ -72,7 +64,7 @@ button::after {
 
 .toast-desc {
   margin-top: -40rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #818181;
 }
 
@@ -80,20 +72,21 @@ button::after {
   display: flex;
   width: 100%;
   align-items: center;
-  border-top: 1px solid rgb(202, 202, 202);
+  border-top: 1px solid rgba(202, 202, 202,.5);
 }
 
 .toast-button button {
   flex: none;
   width: 50%;
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 110rpx;
+  line-height: 110rpx;
   text-align: center;
-  font-size: 35rpx;
+  font-size: 32rpx;
 }
 
 .button_cancel {
   color: rgb(204, 204, 204);
+  border-right: 1px solid rgba(202, 202, 202,.5);
 }
 
 .button_confirm {
