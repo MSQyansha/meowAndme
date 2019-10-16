@@ -21,17 +21,8 @@ Component({
 	pageLifetimes: {
 		show: function() {
 			// 页面被展示
-			let unionId = wx.getStorageSync('union_id');
-			if (unionId && unionId != 'null' && unionId != '') {
-				this.setData({
-					hasUserInfo: true
-				});
-			} else {
-				this.setData({
-					hasUserInfo: false
-				});
-			}
-			console.log('pageLifetimes-onshow has userinfo', this.data.hasUserInfo, unionId);
+      this.verifyUnionId()
+			
 		},
 		hide: function() {
 			// 页面被隐藏
@@ -47,17 +38,7 @@ Component({
 		attached: function() {
 			// 在组件实例进入页面节点树时执行
 			// console.log('getusetinfo==attached')
-			let unionId = wx.getStorageSync('union_id');
-			if (unionId && unionId != 'null' && unionId != '') {
-				this.setData({
-					hasUserInfo: true
-				});
-			} else {
-				this.setData({
-					hasUserInfo: false
-				});
-			}
-			console.log('lifetimes-attached has userinfo', this.data.hasUserInfo, unionId);
+      this.verifyUnionId()
 		},
 		detached: function() {
 			// 在组件实例被从页面节点树移除时执行
@@ -69,6 +50,20 @@ Component({
 	 * 组件的方法列表
 	 */
 	methods: {
+    verifyUnionId:function(){
+      let unionId = wx.getStorageSync('union_id');
+      if (unionId && unionId != 'null' && unionId != '') {
+        this.setData({
+          hasUserInfo: true
+        });
+      } else {
+        this.setData({
+          hasUserInfo: false
+        });
+      }
+      console.log('unionid===', this.data.hasUserInfo, unionId);
+
+    },
 		//小程序授权 获取用户信息
 		_getUserInfo: function(e) {
 			console.log(e, 'eee');
@@ -97,6 +92,7 @@ Component({
 			});
 		},
     clearToast() {
+      console.log('clearToast==')
       let that = this
       that.setData({
         isAuthToast: false

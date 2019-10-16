@@ -18,7 +18,7 @@ button::after {
 }
 
 .getusetBtn {
-  z-index: 999;
+  z-index: 910;
   width: 360rpx;
   height: 88rpx;
   line-height: 88rpx;
@@ -37,7 +37,7 @@ button::after {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 99999;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: PingFangSC-Medium;
   font-weight: 500;
